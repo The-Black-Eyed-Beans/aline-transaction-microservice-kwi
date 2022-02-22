@@ -17,13 +17,13 @@ pipeline {
             steps {
                 sh "git submodule init"
                 sh "git submodule update"
-                sh "mvn clean test"
+                // sh "mvn clean test"
             }
         }
 
         stage("Package")  {
             steps {
-                sh "mvn package -DskipTests"
+                sh "mvn clean package -DskipTests"
             }
         }
 
