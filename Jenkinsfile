@@ -30,7 +30,7 @@ pipeline {
         stage("SonarQube Code Analysis") {
             steps {
                 withSonarQubeEnv(installationName: 'SonarQube-Server-kwi'){
-                    sh "mvn sonar:sonar -Dsonar.projectName=${PROJECT}-kwi"
+                    sh "mvn verify sonar:sonar -Dsonar.projectName=${PROJECT}-kwi"
                 }
             }
         }
